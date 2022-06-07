@@ -1,0 +1,108 @@
+.container
+{
+  width: 100vw;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card
+{
+  position: relative;
+  margin: 20px 0;
+  width: 200px;
+  height: 250px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 0 20px 20px rgba(0,0,0,.5);
+  transition: 1s;
+  border-radius: 5px;
+}
+.card:hover
+{
+  z-index: 10000;
+  transform: perspective(2000px) rotate(-3deg);
+  box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+}
+.card .Box
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s cubic-bezier(.15,1.7,.84,.58);
+  border-radius: 4px;
+}
+.card .Box h2{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 3333;
+    background-color: white;
+}
+.card .Box .img
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px ridge white;
+}
+.card:hover .Box
+{
+  transform: rotateY(-135deg);
+}
+.card .details
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.card .details p
+{
+  font-size: 110%;
+}
+@keyframes forrado {
+  25% {
+    box-shadow: -0px -100px 0px -77px rgba(255, 255, 255, 0) inset;
+  }
+  30% {
+    box-shadow: -170px -0px 247px -77px rgba(255, 255, 255, 0.58) inset;
+  }
+  32% {
+    box-shadow: -400px -100px 0px -77px rgba(255, 255, 255, 0.28) inset;
+  }
+  51% {
+  }
+  52% {
+    box-shadow: -400px -100px 0px -77px rgba(255, 255, 255, 0) inset;
+  }
+}
+
+@media screen and (max-width: 800px) {
+    .card{
+        transform: scale(0.7);
+    }
+    .card:hover{
+        transform: scale(0.7);
+    }
+  }

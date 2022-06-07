@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Biblioteca</title>
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/waves.css">
+        <script type="module">
+            import  {biblioteca}  from "./script/biblioteca.js";
+
+            const libroAventuras1={
+                titulo: "Libro1",
+                color: "yellow",
+                autor: "A.J. Pérez",
+                numPaginas: 110,
+                editorial: "Santillana",
+                forrado: false,
+                prestado: false,
+            };
+
+            const libroAventuras2={
+                titulo: "Libro2",
+                color: "blue",
+                autor: "Zygmunt Bauman",
+                numPaginas: 135,
+                editorial: "Deusto",
+                forrado: false,
+                prestado: false,
+            };
+
+            const libroAventuras3={
+                titulo: "Libro3",
+                color: "red",
+                autor: "Autor",
+                numPaginas: 668,
+                editorial: "Deusto",
+                forrado: true,
+                prestado: false,
+            };
+            const libreria = [libroAventuras1, libroAventuras2, libroAventuras3];
+            biblioteca.libros = libreria;
+            
+            let pags = biblioteca.paginas(300);
+            console.log(pags);
+
+            let autores = biblioteca.buscarAutor("Autor");
+            console.log(autores);
+
+            let colores = biblioteca.color("blue");
+            console.log("colores");
+            console.log(colores);
+
+            //Préstamos
+            // const libroDeseado = biblioteca.prestar('Libro2');
+            // libroDeseado !== undefined ? console.log("Título del libro prestado: ", libroDeseado.titulo) : console.log("Libro no disponible");
+            // //Devoluciones
+            
+            // biblioteca.devolver(libroDeseado);
+            // // biblioteca.forrar(biblioteca.libros);
+            biblioteca.mostrar();
+        </script>
+    </head>
+    <body><div class="main">
+
+        <!--Content before waves-->
+        <div class="inner-main flex">
+        
+            <div class="container">
+            </div>
+        
+        </div>
+        
+        <!--Waves Container-->
+        <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+        </svg>
+        </div>
+        <!--Waves end-->
+        
+        </div>
+        <!--Header ends-->
+        
+        <!--Content starts-->
+        <div class="content flex">
+          <p>M. Martin </p>
+        </div>
+        <!--Content ends-->
+    </body>
+</html>
